@@ -1,0 +1,2 @@
+FEATURES="splitdebug nostrip"
+CFLAGS="${CFLAGS} -ggdb -fno-builtin-strlen -fno-strict-aliasing"
