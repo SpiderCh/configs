@@ -1,2 +1,0 @@
-CFLAGS="-march=corei7-avx -mtune=corei7-avx -O3 -pipe -fomit-frame-pointer"
-CXXFLAGS="${CFLAGS}"
