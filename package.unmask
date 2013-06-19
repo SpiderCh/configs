@@ -1,12 +1,2 @@
-#
-# Chromium
-#
-#www-client/chromium
-#dev-lang/v8
-net-libs/libsrtp
 media-video/ffmpeg
 =media-libs/fontconfig-2.10.92
-#www-plugins/chrome-binary-plugins
-media-gfx/blender
-sys-devel/clang
-sys-devel/llvm
