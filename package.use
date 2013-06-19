@@ -1,177 +1,256 @@
-dev-libs/libxml2 python icu
-sys-apps/util-linux static-libs
-sys-fs/udev gudev
-net-libs/libproxy -networkmanager
-net-nds/openldap sasl
-#
-dev-java/swt -xulrunner
-sys-power/pm-utils networkmanager
-media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora upnp tolame wma-fixed vlm switcher
-media-video/vlc -libnotify -httpd
-net-print/hplip scanner hpijs snmp static-ppds
-sys-libs/pam -cracklib
-sys-auth/pambase -cracklib
-#
-app-laptop/laptop-mode-tools acpi -apm
-media-video/ffmpeg theora threads avx mmxext network cpudetection threads v4l libv4l opus
-virtual/ffmpeg threads theora
-#
-#Qt
-#
-dev-qt/qt-creator valgrind examples android autotools
-#
-# Python
-#
-dev-python/numpy lapack
-dev-lang/python sqlite tk
-dev-python/spyder matplotlib numpy scipy pep8 pylint
-dev-python/matplotlib latex
-#
-# Eix
-#
-app-portage/eix optimization strong-optimization tools sqlite security
-#
-# GCC
-#
-sys-devel/gcc multislot lto libffi doc graphite cxx fortran -go
-#
-dev-libs/boost doc icu tools
-#
-#Libre Office
-#
-app-office/libreoffice-l10n offlinehelp -java
-app-office/libreoffice -java -nsplugin -branding
-#
-# Networkmanager
-#
-net-misc/networkmanager nss gnutls dhclient -dhcpcd -nss
-#
-dev-libs/keybinder python
-#
-# X.Org
-#
-x11-drivers/xf86-video-intel sna
-#
-sys-apps/util-linux static-libs
-#
-# Mesa
-#
-media-libs/mesa g3dvl egl gbm gles gles1 gles2 openvg vdpau xorg osmesa
-#
-#
-# NTFS 3G
-#
-sys-fs/ntfs3g ntfsprogs
-#
-sys-fs/cryptsetup static
-#
-# KDE
-#
-kde-base/kscreensaver -opengl
-kde-base/libplasmaclock -opengl
-kde-base/kalgebra -opengl
-kde-base/kinfocenter -opengl
-kde-base/kwin -opengl -xcompositei gles
-kde-base/kdeartwork-kscreensaver -opengl
-kde-base/krunner -opengl -xcomposite
-kde-base/systemsettings -opengl
-kde-base/kdeplasma-addons -opengl
-kde-base/plasma-workspace -xcomposite
-kde-base/libtaskmanager -xcomposite
+############
+# app-doc  #
+############
+app-doc/doxygen dot latex
 
-x11-libs/libdrm libkms
-kde-base/okular chm djvu ebook
-kde-base/kopete latex oscar
+#################
+# app-emulation #
+#################
+app-emulation/virtualbox-bin -chm
+app-emulation/virtualbox extensions
+app-emulation/wine gecko gstreamer gnutls openal osmesa perl -cups -ncurses -gecko -oss
+
+##############
+# app-laptop #
+##############
+app-laptop/laptop-mode-tools acpi -apm
+
+##############
+# app-office #
+##############
+app-office/akonadi-server sqlite
+app-office/libreoffice -java -nsplugin -branding libreoffice_extensions_pdfimport
+app-office/libreoffice-l10n offlinehelp -java
+
+###############
+# app-portage #
+###############
+app-portage/eix optimization strong-optimization tools sqlite security
+
+#############
+# app-shell #
+#############
+app-shells/bash examples
+app-shells/zsh examples
+
+############
+# app-text #
+############
+app-text/texlive extra
+
+###########
+# dev-cpp #
+###########
+dev-cpp/glog gflags
+
+#############
+# dev-games #
+#############
+dev-games/ogre cg double-precision double-precision examples threads tbb tools boost -gles2
+
+############
+# dev-java #
+############
+dev-java/icedtea-bin -*
+dev-java/swing-layout source
+
+############
+# dev-lang #
+############
+dev-lang/python sqlite tk
+
+############
+# dev-libs #
+############
+dev-libs/boost doc icu tools
+dev-libs/elfutils static-libs
+dev-libs/keybinder python
+dev-libs/libxml2 python icu
+dev-libs/openssl gmp rfc3779
+
+##############
+# dev-python #
+##############
+dev-python/matplotlib latex
+dev-python/numpy lapack python_single_target_python3_3
+dev-python/pypy sqlite
+dev-python/PyQt4 declarative sql webkit script
 dev-python/pyudev pyqt4
+dev-python/spyder matplotlib numpy scipy pep8 pylint
+
+##########
+# dev-qt #
+##########
+dev-qt/qt-creator valgrind examples autotools
+dev-qt/qtdemo multimedia
+dev-qt/qtsql mysql
 dev-qt/qtwebkit -icu -gstreamer
-sys-libs/zlib minizip
+
+############
+# dev-util #
+############
+dev-util/cppcheck htmlreport
+dev-util/nvidia-cuda-sdk -*
+
+###########
+# dev-vcs #
+###########
+dev-vcs/git -subversion
+dev-vcs/subversion -berkdb extras vim-syntax
+dev-vcs/subversion java
+dev-vcs/subversion  sasl webdav-serf
+
+############
+# kde-base #
+############
+kde-base/kalgebra -opengl
+kde-base/kdeartwork-kscreensaver -opengl
+kde-base/kdebase-kioslaves samba
+kde-base/kdemultimedia-meta mplayer ffmpeg 
+kde-base/kdeplasma-addons -opengl
+kde-base/kinfocenter -opengl
+kde-base/kopete latex oscar
+kde-base/krdc rdesktop vnc
+kde-base/krunner -opengl -xcomposite
+kde-base/kscreensaver -opengl
+kde-base/kwin -opengl -xcompositei gles
+kde-base/libplasmaclock -opengl
+kde-base/libtaskmanager -xcomposite
+kde-base/okular chm djvu ebook
+kde-base/plasma-workspace -xcomposite
+kde-base/systemsettings -opengl
+
+#############
+# media-gfx #
+#############
+media-gfx/blender boost ffmpeg python_single_target_python3_3
+media-gfx/blender player cycles cycles openal
+media-gfx/blender python_single_target_python3_3
+media-gfx/imagemagick corefonts djvu fftw hdri opencl
+
+##############
+# media-libs #
+##############
+media-libs/freetype kpathsea
+media-libs/gd fontconfig
+media-libs/gst-plugins-base theora
+media-libs/harfbuzz icu
+media-libs/libraw demosaic
+media-libs/libvpx postproc
+media-libs/libwebp experimental
+media-libs/mesa g3dvl egl gbm gles gles1 gles2 openvg vdpau xorg osmesa
+media-libs/opencv eigen doc examples opencl
+
+###############
+# media-sound #
+###############
+media-sound/clementine mms lastfm moodbar
+
+###############
+# media-video #
+###############
+media-video/ffmpeg theora threads avx mmxext network cpudetection threads v4l libv4l opus
+media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora upnp tolame wma-fixed vlm switcher -libnotify -httpd
+
+##########
+# net-fs #
+##########
+net-fs/cifs-utils upcall
+net-fs/samba -server -cups caps
+
+############
+# net-libs #
+############
+net-libs/libproxy -networkmanager
+net-libs/rb_libtorrent examples
+
+############
+# net-misc #
+############
+net-misc/freerdp server
+net-misc/networkmanager nss gnutls dhclient -dhcpcd -nss
 net-misc/ntp caps
 
-dev-vcs/subversion -berkdb extras vim-syntax
-net-fs/samba -server -cups caps
-net-p2p/ktorrent webinterface
-kde-base/kdebase-kioslaves samba
-sci-mathematics/octave curl fftw
-dev-vcs/subversion  sasl webdav-serf
-x11-libs/wxGTK -X -opengl -sdl -*
-app-text/fbreader qt4
-##
-# JAVA
-##
-dev-java/swing-layout source
-dev-vcs/subversion java
-sys-fs/cryptsetup -static
-dev-python/PyQt4 declarative sql webkit
-#
-# Clementime
-#
-media-sound/clementine mms lastfm moodbar
-#
-media-gfx/sane -jpeg
-dev-java/icedtea-bin nsplugin
-app-office/libreoffice jemalloc libreoffice_extensions_pdfimport
-kde-base/kdemultimedia-meta mplayer
-dev-util/kdevelop -okteta
-dev-java/sun-jre-bin nsplugin
-dev-java/oracle-jre-bin nsplugin
-dev-java/icedtea-bin nsplugin
-dev-games/ogre cg double-precision double-precision examples threads tbb tools boost -gles2
-media-libs/libraw demosaic
-media-gfx/imagemagick corefonts djvu fftw hdri opencl
-media-libs/libvpx postproc
-sys-devel/gdb python
+###########
+# net-nds #
+###########
+net-nds/openldap sasl
+
+#############
+# net-print #
+#############
+net-print/hplip scanner hpijs snmp static-ppds libusb0 -libnotify
+
+################
+# net-wireless #
+################
 net-wireless/wpa_supplicant -qt4
-sys-fs/lvm2 -static-libs -static
-app-shells/bash examples
-sys-apps/busybox -static
-app-emulation/wine gecko gstreamer gnutls openal osmesa perl
-app-emulation/wine -cups -ncurses -gecko -oss
-dev-libs/elfutils static-libs
-dev-qt/* c++0x
-media-libs/libsdl joystick
-dev-cpp/glog gflags
-media-gfx/blender player cycles doc cycles openal
-app-doc/doxygen dot
-media-libs/gd fontconfig
-app-doc/doxygen latex
-app-text/texlive extra
-media-libs/freetype kpathsea
+
+############
+# sci-libs #
+############
 sci-libs/hdf5 -threads
-dev-java/icedtea-bin -*
-www-plugins/adobe-flash vdpau
-dev-python/PyQt4 script
-# move x11-libs/qt-demo dev-qt/qtdemo
-dev-qt/qtdemo multimedia
-sys-power/cpupower cpufreq_bench
-# move x11-libs/qt-sql dev-qt/qtsql
-dev-qt/qtsql mysql
-dev-libs/libdbusmenu gtk -introspection
-dev-libs/libappindicator -introspection
-dev-libs/gmp doc
-dev-libs/openssl doc gmp rfc3779
-dev-vcs/git -subversion
-media-libs/gst-plugins-base theora
-app-office/akonadi-server sqlite
-net-fs/cifs-utils upcall
-media-libs/libwebp experimental
-app-emulation/virtualbox-bin -chm
-net-libs/rb_libtorrent examples doc
-gnome-base/gconf -* python_targets_python2_7
-#
-media-gfx/blender boost ffmpeg
-media-gfx/blender python_single_target_python3_3
-dev-python/numpy python_single_target_python3_3
-dev-util/nvidia-cuda-sdk -*
-dev-python/pypy sqlite
-media-libs/opencv eigen doc examples opencl
-net-print/hplip -libnotify libusb0
-dev-util/cppcheck htmlreport
-app-emulation/virtualbox extensions
-kde-base/krdc rdesktop vnc
-media-libs/harfbuzz icu
-app-shells/bash -examples
-virtual/python-imaging -python_targets_python3_2
-app-shells/zsh examples
 sci-libs/scipy -python_targets_python3_2
-net-misc/freerdp server
-media-sound/xmms2 python ffmpeg phonehome curl mms 
+
+###################
+# sci-mathematics #
+###################
+sci-mathematics/octave curl fftw
+
+############
+# sys-apps #
+############
+sys-apps/busybox -static
+sys-apps/util-linux static-libs
+
+############
+# sys-auth #
+############
+sys-auth/pambase -cracklib
+
+#############
+# sys-devel #
+#############
+sys-devel/gcc multislot lto libffi doc graphite cxx fortran -go
+sys-devel/gdb python
+
+##########
+# sys-fs #
+##########
+sys-fs/lvm2 -static-libs -static
+sys-fs/ntfs3g ntfsprogs
+sys-fs/udev gudev
+
+############
+# sys-libs #
+############
+sys-libs/pam -cracklib
+sys-libs/zlib minizip
+
+#############
+# sys-power #
+#############
+sys-power/cpupower cpufreq_bench
+sys-power/pm-utils networkmanager
+
+###########
+# virtual #
+###########
+virtual/ffmpeg threads theora
+virtual/python-imaging -python_targets_python3_2
+
+###############
+# www-plugins #
+###############
+www-plugins/adobe-flash vdpau
+
+###############
+# x11-drivers #
+###############
+x11-drivers/xf86-video-intel sna
+
+############
+# x11-libs #
+############
+x11-libs/libdrm libkms
+x11-libs/wxGTK -*
