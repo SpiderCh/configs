@@ -150,7 +150,7 @@ media-sound/clementine mms lastfm moodbar
 # media-video #
 ###############
 media-video/ffmpeg theora threads avx mmxext network cpudetection threads v4l libv4l opus
-media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora upnp tolame wma-fixed vlm switcher -libnotify -httpd
+media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora upnp tolame wma-fixed vlm switcher rtsp lua httpd -libnotify 
 
 ##########
 # net-fs #
