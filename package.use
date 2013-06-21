@@ -253,4 +253,4 @@ x11-drivers/xf86-video-intel sna
 # x11-libs #
 ############
 x11-libs/libdrm libkms
-x11-libs/wxGTK -*
+x11-libs/wxGTK X doc gstreamer opengl sdl tiff
