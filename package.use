@@ -225,6 +225,7 @@ sys-fs/udev gudev
 # sys-libs #
 ############
 sys-libs/pam -cracklib
+sys-libs/talloc python
 sys-libs/zlib minizip
 
 #############
