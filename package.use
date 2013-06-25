@@ -168,8 +168,10 @@ net-libs/rb_libtorrent examples
 # net-misc #
 ############
 net-misc/freerdp server
+net-misc/openssh hpn
 net-misc/networkmanager nss gnutls dhclient -dhcpcd -nss
 net-misc/ntp caps
+
 
 ###########
 # net-nds #
@@ -255,3 +257,7 @@ x11-drivers/xf86-video-intel sna
 ############
 x11-libs/libdrm libkms
 x11-libs/wxGTK X doc gstreamer opengl sdl tiff
+
+###########
+# x11-wm  #
+###########

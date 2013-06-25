@@ -1,2 +1,3 @@
 =dev-python/argparse-1.2.1-r2
 >sys-boot/grub-0.97-r13
+=net-misc/openssh-6.2_p1
