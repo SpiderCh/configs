@@ -1,2 +1,4 @@
-media-video/ffmpeg
-=media-libs/fontconfig-2.10.92
+#sys-devel/gcc
+app-vim/project
+media-sound/mpd
+media-sound/ario

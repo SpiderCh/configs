@@ -1,7 +1,18 @@
+#############
+# app-crypt #
+#############
+app-crypt/gcr gtk
+
 ############
 # app-doc  #
 ############
 app-doc/doxygen dot latex
+
+###############
+# app-editors #
+###############
+app-editors/gvim gtk
+app-editors/vim
 
 #################
 # app-emulation #
@@ -15,17 +26,24 @@ app-emulation/wine gecko gstreamer gnutls openal osmesa perl -cups -ncurses -gec
 ##############
 app-laptop/laptop-mode-tools acpi -apm
 
+############
+# app-misc #
+############
+app-misc/geoclue gtk
+app-misc/mc -* nls
+
 ##############
 # app-office #
 ##############
 app-office/akonadi-server sqlite
-app-office/libreoffice -java -nsplugin -branding libreoffice_extensions_pdfimport
+app-office/libreoffice -java -nsplugin -branding -bluetooth libreoffice_extensions_pdfimport
 app-office/libreoffice-l10n offlinehelp -java
 
 ###############
 # app-portage #
 ###############
 app-portage/eix optimization strong-optimization tools sqlite security
+app-portage/layman mercurial
 
 #############
 # app-shell #
@@ -37,6 +55,12 @@ app-shells/zsh examples
 # app-text #
 ############
 app-text/texlive extra
+
+##########
+# dev-db #
+##########
+dev-db/mongodb mms-agent embedded-v8
+dev-db/mysql embedded
 
 ###########
 # dev-cpp #
@@ -65,22 +89,32 @@ dev-lang/python sqlite tk
 dev-libs/boost doc icu tools
 dev-libs/elfutils static-libs
 dev-libs/keybinder python
+dev-libs/libdbusmenu gtk
+dev-libs/libindicate gtk
 dev-libs/libxml2 python icu
 dev-libs/openssl gmp rfc3779
 
 ##############
 # dev-python #
 ##############
-dev-python/matplotlib latex
-dev-python/numpy lapack python_single_target_python3_3
+dev-python/argparse python_targets_python2_5
+dev-python/matplotlib latex -gtk
+dev-python/numpy lapack python_single_target_python3_3 python_targets_python3_3
 dev-python/pypy sqlite
 dev-python/PyQt4 declarative sql webkit script
 dev-python/pyudev pyqt4
+dev-python/setuptools python_targets_python3_3
 dev-python/spyder matplotlib numpy scipy pep8 pylint
+
+############
+# dev-ruby #
+############
+dev-ruby/* ruby_targets_ruby20
 
 ##########
 # dev-qt #
 ##########
+dev-qt/designer -phonon
 dev-qt/qt-creator valgrind examples autotools
 dev-qt/qtdemo multimedia
 dev-qt/qtsql mysql
@@ -90,6 +124,7 @@ dev-qt/qtwebkit -icu -gstreamer
 # dev-util #
 ############
 dev-util/cppcheck htmlreport
+dev-util/geany -vte
 dev-util/nvidia-cuda-sdk -*
 
 ###########
@@ -100,32 +135,38 @@ dev-vcs/subversion -berkdb extras vim-syntax
 dev-vcs/subversion java
 dev-vcs/subversion  sasl webdav-serf
 
+##############
+# gnome-base #
+##############
+gnome-base/gconf -ldap
+
 ############
 # kde-base #
 ############
-kde-base/kalgebra -opengl
-kde-base/kdeartwork-kscreensaver -opengl
+kde-base/kalgebra 
+kde-base/kdeartwork-kscreensaver
 kde-base/kdebase-kioslaves samba
 kde-base/kdemultimedia-meta mplayer ffmpeg 
-kde-base/kdeplasma-addons -opengl
-kde-base/kinfocenter -opengl
+kde-base/kdeplasma-addons
+kde-base/kinfocenter
 kde-base/kopete latex oscar
 kde-base/krdc rdesktop vnc
-kde-base/krunner -opengl -xcomposite
-kde-base/kscreensaver -opengl
-kde-base/kwin -opengl -xcompositei gles
-kde-base/libplasmaclock -opengl
-kde-base/libtaskmanager -xcomposite
+kde-base/krunner 
+kde-base/kscreensaver
+kde-base/kwin  gles
+kde-base/libplasmaclock
+kde-base/libtaskmanager
 kde-base/okular chm djvu ebook
-kde-base/plasma-workspace -xcomposite
-kde-base/systemsettings -opengl
+kde-base/plasma-workspace
+kde-base/systemsettings
 
 #############
 # media-gfx #
 #############
-media-gfx/blender boost ffmpeg python_single_target_python3_3
+media-gfx/blender boost ffmpeg python_targets_python3_3
 media-gfx/blender player cycles cycles openal
 media-gfx/blender python_single_target_python3_3
+media-gfx/exiv2 xmp
 media-gfx/imagemagick corefonts djvu fftw hdri opencl
 
 ##############
@@ -135,16 +176,22 @@ media-libs/freetype kpathsea
 media-libs/gd fontconfig
 media-libs/gst-plugins-base theora
 media-libs/harfbuzz icu
+media-libs/libcanberra gtk gtk3
+media-libs/libsdl joystick
 media-libs/libraw demosaic
 media-libs/libvpx postproc
 media-libs/libwebp experimental
-media-libs/mesa g3dvl egl gbm gles gles1 gles2 openvg vdpau xorg osmesa
-media-libs/opencv eigen doc examples opencl
+media-libs/mesa g3dvl egl gbm gles gles1 gles2 openvg vdpau xorg osmesa -opencl
+media-libs/opencv eigen doc examples opencl qt4 -gtk
 
 ###############
 # media-sound #
 ###############
-media-sound/clementine mms lastfm moodbar
+media-sound/amarok embedded
+media-sound/cantata mtp online-services taglib
+media-sound/clementine mms lastfm
+media-sound/pulseaudio equalizer libsamplerate
+media-sound/xmms2 mlib-update mms phonehome curl asf ffmpeg -cxx
 
 ###############
 # media-video #
@@ -156,7 +203,12 @@ media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora 
 # net-fs #
 ##########
 net-fs/cifs-utils upcall
-net-fs/samba -server -cups caps
+net-fs/samba -server -cups caps winbind
+
+##########
+# net-im #
+##########
+net-im/pidgin -ncurses -gnutls gtk prediction
 
 ############
 # net-libs #
@@ -168,6 +220,7 @@ net-libs/rb_libtorrent examples
 # net-misc #
 ############
 net-misc/freerdp server
+net-misc/hotot kde qt4
 net-misc/openssh hpn
 net-misc/networkmanager nss gnutls dhclient -dhcpcd -nss
 net-misc/ntp caps
@@ -203,6 +256,7 @@ sci-mathematics/octave curl fftw
 # sys-apps #
 ############
 sys-apps/busybox -static
+sys-apps/hwloc -opencl
 sys-apps/util-linux static-libs
 
 ############
@@ -213,8 +267,9 @@ sys-auth/pambase -cracklib
 #############
 # sys-devel #
 #############
-sys-devel/gcc multislot lto libffi doc graphite cxx fortran -go
+sys-devel/gcc multislot lto libffi doc graphite fortran -go -gtk
 sys-devel/gdb python
+sys-devel/llvm clang
 
 ##########
 # sys-fs #
@@ -240,6 +295,7 @@ sys-power/pm-utils networkmanager
 # virtual #
 ###########
 virtual/ffmpeg threads theora
+virtual/mysql embedded
 virtual/python-imaging -python_targets_python3_2
 
 ###############
