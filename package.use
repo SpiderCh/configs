@@ -36,7 +36,7 @@ app-misc/mc -* nls
 # app-office #
 ##############
 app-office/akonadi-server sqlite
-app-office/libreoffice -java -nsplugin -branding -bluetooth libreoffice_extensions_pdfimport
+app-office/libreoffice -java -nsplugin -branding -bluetooth libreoffice_extensions_pdfimport -gtk -gtk3
 app-office/libreoffice-l10n offlinehelp -java
 
 ###############
@@ -55,6 +55,7 @@ app-shells/zsh examples
 # app-text #
 ############
 app-text/texlive extra
+app-text/texlive-core xetex
 
 ##########
 # dev-db #
@@ -76,7 +77,9 @@ dev-games/ogre cg double-precision double-precision examples threads tbb tools b
 # dev-java #
 ############
 dev-java/icedtea-bin -*
+dev-java/oracle-jdk-bin nsplugin
 dev-java/swing-layout source
+dev-java/sun-jre-bin nsplugin
 
 ############
 # dev-lang #
@@ -89,6 +92,7 @@ dev-lang/python sqlite tk
 dev-libs/boost doc icu tools
 dev-libs/elfutils static-libs
 dev-libs/keybinder python
+dev-libs/leveldb -snappy
 dev-libs/libdbusmenu gtk
 dev-libs/libindicate gtk
 dev-libs/libxml2 python icu
@@ -117,6 +121,7 @@ dev-ruby/* ruby_targets_ruby20
 dev-qt/designer -phonon
 dev-qt/qt-creator valgrind examples autotools
 dev-qt/qtdemo multimedia
+dev-qt/qtgui gtkstyle
 dev-qt/qtsql mysql
 dev-qt/qtwebkit -icu -gstreamer
 
@@ -125,12 +130,14 @@ dev-qt/qtwebkit -icu -gstreamer
 ############
 dev-util/cppcheck htmlreport
 dev-util/geany -vte
+dev-util/glade python
+dev-util/netbeans -netbeans_modules_javafx -netbeans_modules_websvccommon
 dev-util/nvidia-cuda-sdk -*
 
 ###########
 # dev-vcs #
 ###########
-dev-vcs/git -subversion
+dev-vcs/git -subversion python
 dev-vcs/subversion -berkdb extras vim-syntax
 dev-vcs/subversion java
 dev-vcs/subversion  sasl webdav-serf
@@ -146,7 +153,7 @@ gnome-base/gconf -ldap
 kde-base/kalgebra 
 kde-base/kdeartwork-kscreensaver
 kde-base/kdebase-kioslaves samba
-kde-base/kdemultimedia-meta mplayer ffmpeg 
+kde-base/kdemultimedia-meta mplayer ffmpeg
 kde-base/kdeplasma-addons
 kde-base/kinfocenter
 kde-base/kopete latex oscar
@@ -158,7 +165,7 @@ kde-base/libplasmaclock
 kde-base/libtaskmanager
 kde-base/okular chm djvu ebook
 kde-base/plasma-workspace
-kde-base/systemsettings
+kde-base/systemsettings gtk
 
 #############
 # media-gfx #
@@ -172,7 +179,7 @@ media-gfx/imagemagick corefonts djvu fftw hdri opencl
 ##############
 # media-libs #
 ##############
-media-libs/freetype kpathsea
+media-libs/freetype infinality
 media-libs/gd fontconfig
 media-libs/gst-plugins-base theora
 media-libs/harfbuzz icu
@@ -190,19 +197,21 @@ media-libs/opencv eigen doc examples opencl qt4 -gtk
 media-sound/amarok embedded
 media-sound/cantata mtp online-services taglib
 media-sound/clementine mms lastfm
-media-sound/pulseaudio equalizer libsamplerate
+media-sound/deadbeef ape cover cover-imlib2 curl ffmpeg m3u shellexec sid wma -gtk3 gtk2
+media-sound/pulseaudio equalizer libsamplerate qt4
 media-sound/xmms2 mlib-update mms phonehome curl asf ffmpeg -cxx
 
 ###############
 # media-video #
 ###############
-media-video/ffmpeg theora threads avx mmxext network cpudetection threads v4l libv4l opus
+media-video/gnome-mplayer -alsa -dconf -libnotify
+media-video/ffmpeg theora threads avx mmxext network cpudetection threads v4l libv4l opus vaapi
 media-video/vlc  vaapi id3tag live matroska samba sdl-image skins stream theora upnp tolame wma-fixed vlm switcher rtsp lua httpd -libnotify 
 
 ##########
 # net-fs #
 ##########
-net-fs/cifs-utils upcall
+net-fs/cifs-utils -acl
 net-fs/samba -server -cups caps winbind
 
 ##########
@@ -219,6 +228,7 @@ net-libs/rb_libtorrent examples
 ############
 # net-misc #
 ############
+net-misc/bfgminer -adl cpumining lm_sensors
 net-misc/freerdp server
 net-misc/hotot kde qt4
 net-misc/openssh hpn
@@ -294,9 +304,14 @@ sys-power/pm-utils networkmanager
 ###########
 # virtual #
 ###########
-virtual/ffmpeg threads theora
+virtual/ffmpeg threads theora vaapi
 virtual/mysql embedded
 virtual/python-imaging -python_targets_python3_2
+
+##############
+# www-client #
+##############
+www-client/firefox alsa
 
 ###############
 # www-plugins #

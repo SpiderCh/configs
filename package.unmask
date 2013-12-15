@@ -2,3 +2,9 @@
 app-vim/project
 media-sound/mpd
 media-sound/ario
+dev-java/sun-jre-bin
+dev-java/sun-jdk
+dev-qt/qt-creator
+media-sound/deadbeef
+dev-util/idea-community
+=x11-drivers/nvidia-drivers-331.20
