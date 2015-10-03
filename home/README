@@ -1,0 +1,5 @@
+Installing Oh-My-ZSH :
+1. git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+2. chsh -s /bin/zsh
+3. cd ~/.oh-my-zsh/custom/plugins
+4. git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
