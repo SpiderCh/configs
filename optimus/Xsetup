@@ -1,0 +1,7 @@
+#! /bin/sh
+# Xsetup - run as root before the login dialog appears
+# place in /usr/share/config/kdm/
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --output VGA-0 --off
+xrandr --auto

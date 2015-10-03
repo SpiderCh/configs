@@ -1,0 +1,4 @@
+1. Place Xsetup in /usr/share/config/kdm/Xsetup
+2. Set opengl to nvidia
+3. Replace xorg.conf
+4. Restart X-Server.
