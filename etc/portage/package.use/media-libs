@@ -1,0 +1,4 @@
+media-libs/libvpx postproc
+media-libs/harfbuzz icu
+media-libs/mesa gles1 gles2 -llvm
+media-libs/libsdl2 abi_x86_32
