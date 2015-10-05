@@ -2,6 +2,9 @@
 # Xsetup - run as root before the login dialog appears
 # place in /usr/share/config/kdm/
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --output VGA-0 --off
-xrandr --auto
+opengl_impl=`eselect opengl show`
+if [ "$opengl_impl" == "nvidia" ]; then
+	xrandr --setprovideroutputsource modesetting NVIDIA-0
+	xrandr --output VGA-0 --off
+	xrandr --auto
+fi

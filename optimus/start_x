@@ -1,0 +1,9 @@
+#! /bin/sh
+opengl_mode=$1
+eselect opengl set $opengl_mode
+if [ "$opengl_mode" == "nvidia" ]; then
+	cp /etc/X11/xorg.conf_nvidia /etc/X11/xorg.conf
+else
+	rm /etc/X11/xorg.conf
+fi
+/etc/init.d/xdm restart
