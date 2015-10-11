@@ -1,3 +1,12 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()
+
 filetype plugin on
 filetype indent on
 
@@ -37,18 +46,19 @@ menu SpellLang.RU :setlocal spell spelllang=ru
 menu SpellLang.EN :setlocal spell spelllang=en
 map  :emenu SpellLang.
 " Other
-set nocompatible " обойдёмся без стандартного vi
 syntax on    " syntax on
 
 set backspace=indent,eol,start
 set bs=2
 
 try
-    colorscheme desert
+	set t_Co=256
+	colorscheme wombat256mod
 catch
 endtry
 set hidden   " allow editing multiple unsaved buffers
 filetype on  " automatic file type detection
+set title
 set autoread " watch for file changes by other programs
 set ruler    " show the line number on bar
 set nowrap " not wrap long lines
@@ -89,3 +99,8 @@ imap <C-tab> <ESC>:tabnext<cr>i
 " Новая вкладка:
 nmap <C-t> :tabnew<cr>
 imap <C-t> <ESC>:tabnew<cr>
+set listchars=eol:¬,tab:▸▸,trail:~,extends:>,precedes:<,space:•
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
