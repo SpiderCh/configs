@@ -17,9 +17,6 @@ set number
 set background=dark
 set nocp
 set cul
-"set spell
-"set spl=en
-"set spl=ru
 set sh=/bin/bash
 set mp=make
 
