@@ -1,3 +1,6 @@
 [submodule "vim_plugins/vim-wombat256mod"]
 	path = vim_plugins/vim-wombat256mod
 	url = https://github.com/michalbachowski/vim-wombat256mod
+[submodule "vim_plugins/Vundle.vim"]
+	path = vim_plugins/Vundle.vim
+	url = git@github.com:VundleVim/Vundle.vim.git
