@@ -7,3 +7,6 @@
 [submodule "vim_plugins/vim-gitgutter"]
 	path = vim_plugins/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim_plugins/molokai"]
+	path = vim_plugins/molokai
+	url = https://github.com/tomasr/molokai.git
