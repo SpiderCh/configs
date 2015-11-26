@@ -1,11 +1,15 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()
+if isdirectory("$HOME/.vim/bundle")
+	set rtp+=$HOME/.vim/bundle/Vundle.vim
+	call vundle#begin()
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'airblade/vim-gitgutter'
+	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'rdnetto/YCM-Generator'
+	call vundle#end()
+endif
 
 filetype plugin on
 filetype indent on
@@ -28,13 +32,12 @@ set wrap "Wrap lines
 set tabstop=4 " tabstops of 4
 set shiftwidth=4 " indents of 4
 set ts=4 " у меня табуляция 4 символа
-" Serach:
+" Search:
 set hlsearch  " enable search highlight globally
 set incsearch " show matches as soon as possible
 set showmatch " show matching brackets when typing
 set diffopt=filler,iwhite " ignore all whitespace and sync
 " Spelling:
-"set keymap=russian-jcukenwin " ctrl+6 || ctrl+^
 set wildmenu
 set wcm=
 menu SpellLang.RU_EN  :setlocal spell spelllang=ru,en
@@ -64,9 +67,13 @@ set hid
 set smartcase
 set lazyredraw
 set magic
+if !isdirectory("$HOME/.vim/temp")
+	call mkdir("$HOME/.vim/temp", "p")
+endif
 set directory=$HOME/.vim/temp
 set backupdir=$HOME/.vim/temp
 set viewdir=$HOME/.vim/temp
+
 " Добавляем локали для чтения не правильных файлов:
 set encoding=utf-8
 set termencoding=utf-8
@@ -77,25 +84,16 @@ menu Encoding.KOI8-U   :e ++enc=koi8-u<CR>
 menu Encoding.UTF-8    :e ++enc=utf-8<CR>
 map :emenu Encoding.
 " Делаем удобные биндинги для клавишь:
-" Сохранить:
-nmap <F2> :w<cr>
-vmap <F2> <esc>:w<cr>i
-imap <F2> <esc>:w<cr>i
-" Выйти:
-nmap <F10> :q!<cr>
-vmap <F10> <esc>:q!<cr>i
-imap <F10> <esc>:q!<cr>i
 " Предыдущая вкладка
 map <S-tab> :tabprevious<cr>
 nmap <S-tab> :tabprevious<cr>
-imap <S-tab> <ESC>:tabprevious<cr>i
 " Следующая вкладка:
 map <C-tab> :tabnext<cr>
 nmap <C-tab> :tabnext<cr>
-imap <C-tab> <ESC>:tabnext<cr>i
 " Новая вкладка:
 nmap <C-t> :tabnew<cr>
-imap <C-t> <ESC>:tabnew<cr>
+" Закрыть вкладку:
+map <S-t> :tabclose<cr>
 set listchars=eol:¬,tab:▸▸,trail:~,extends:>,precedes:<,space:•
 map <up> <nop>
 map <down> <nop>
