@@ -1,5 +1,15 @@
 # Lines configured by zsh-newuser-install
 #
+if [[ `uname` == "Darwin" ]]; then
+	export MOVAVI_SDK=$HOME/SDK
+	launchctl setenv MOVAVI_SDK $MOVAVI_SDK
+	export GLOG_v=100
+	export GLOG_buflevel=-1
+	export PATH="/usr/local/bin:$PATH"
+	launchctl setenv GLOG_v ${GLOG_v}
+	launchctl setenv GLOG_buflevel ${GLOG_buflevel}
+fi
+
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gentoo"
@@ -13,7 +23,11 @@ autoload colors zsh/terminfo
 colors
 # Setting up PS1
 # PS1 = [Date] User@Hostname CurrFolder >
-PS1='%B[%D - %*]%b %F{green}%n@%m%f %F{cyan}%~ >%f '
+if [[ `whoami` == "root" ]]; then
+	PS1='%B[%D - %*]%b %F{red}%n %F{cyan}%~ >%f '
+else
+	PS1='%B%F{white}[%D - %*]%b %F{green}%n@%m%f %F{cyan}%~ >%f '
+fi
 
 HISTFILE=~/.histfile
 HISTSIZE=100
@@ -25,9 +39,25 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -U colors && colors
-alias ls='ls --color=auto'
-alias ll='ls -l'
+if [[ `uname` == 'Darwin' ]]; then
+	autoload -U colors && colors
+	alias ls='ls -GF'
+	alias ll='ls -l'
+	alias ldd='otool -L'
+	alias lockS="/Users/$USER/.local/share/utils/lock_screen.sh"
+	alias showF="/Users/$USER/.local/share/utils/show_hidden_files.sh"
+	alias hideF="/Users/$USER/.local/share/utils/hide_hidden_files.sh"
+	alias lcl='launchctl'
+	alias lcll='launchctl load'
+	alias lclu='launchctl unload'
+	alias xcodebuild='xcodebuild -parallelizeTargets -jobs 8'
+	alias mvim='mvim --remote-tab-silent'
+	alias vim='mvim'
+elif [[ `uname` == "Linux" ]]; then
+	autoload -U colors && colors
+	alias ls='ls --color=auto'
+	alias ll='ls -l'
+fi
 autoload -Uz compinit
 
 typeset -A key
