@@ -44,19 +44,19 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias ls='ls -GF'
 	alias ll='ls -l'
 	alias ldd='otool -L'
-	alias lockS="/Users/$USER/.local/share/utils/lock_screen.sh"
-	alias showF="/Users/$USER/.local/share/utils/show_hidden_files.sh"
-	alias hideF="/Users/$USER/.local/share/utils/hide_hidden_files.sh"
+	alias lockS="$HOME/.local/share/utils/lock_screen.sh"
+	alias showF="$HOME/.local/share/utils/show_hidden_files.sh"
+	alias hideF="$HOME/.local/share/utils/hide_hidden_files.sh"
 	alias lcl='launchctl'
 	alias lcll='launchctl load'
 	alias lclu='launchctl unload'
 	alias xcodebuild='xcodebuild -parallelizeTargets -jobs 8'
 	alias mvim='mvim --remote-tab-silent'
-	alias vim='mvim'
 elif [[ `uname` == "Linux" ]]; then
 	autoload -U colors && colors
 	alias ls='ls --color=auto'
 	alias ll='ls -l'
+	alias gvim='gvim --remote-tab-silent'
 fi
 autoload -Uz compinit
 
