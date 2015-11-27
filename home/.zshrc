@@ -107,5 +107,5 @@ bindkey "\\E[4~" end-of-line
 bindkey "\\E[5~" up-line-or-history
 bindkey "\\E[6~" down-line-or-history
 
-compinit
+compinit -u
 # End of lines added by compinstall
