@@ -12,11 +12,11 @@ fi
 
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="gentoo"
-
-plugins=(git git-extras git-prompt zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
+if [ -d "$ZSH" ]; then
+	ZSH_THEME="gentoo"
+	plugins=(git git-extras git-prompt zsh-syntax-highlighting)
+	source $ZSH/oh-my-zsh.sh
+fi
 
 # Enabling nice color macros
 autoload colors zsh/terminfo
@@ -40,7 +40,6 @@ bindkey -v
 zstyle :compinstall filename '$HOME/.zshrc'
 
 if [[ `uname` == 'Darwin' ]]; then
-	autoload -U colors && colors
 	alias ls='ls -GF'
 	alias ll='ls -l'
 	alias ldd='otool -L'
@@ -53,8 +52,7 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias xcodebuild='xcodebuild -parallelizeTargets -jobs 8'
 	alias mvim='mvim --remote-tab-silent'
 elif [[ `uname` == "Linux" ]]; then
-	autoload -U colors && colors
-	alias ls='ls --color=auto'
+	alias ls='ls --color=auto -F'
 	alias ll='ls -l'
 	alias gvim='gvim --remote-tab-silent'
 fi
