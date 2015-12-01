@@ -49,7 +49,9 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias lcl='launchctl'
 	alias lcll='launchctl load'
 	alias lclu='launchctl unload'
-	alias xcodebuild='xcodebuild -parallelizeTargets -jobs 8'
+	alias xcodelist='xcodebuild -list'
+	alias xcodetarget='xcodebuild -parallelizeTargets -jobs 8 -target'
+	alias silent_build='egrep "^(/.+:[0-9+:[0-9]+:.(error|warning):|fatal|===)"'
 	alias mvim='mvim --remote-tab-silent'
 elif [[ `uname` == "Linux" ]]; then
 	alias ls='ls --color=auto -F'
