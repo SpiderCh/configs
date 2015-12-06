@@ -67,9 +67,6 @@ set hid
 set smartcase
 set lazyredraw
 set magic
-if !isdirectory("$HOME/.vim/temp")
-	call mkdir("$HOME/.vim/temp", "p")
-endif
 set directory=$HOME/.vim/temp
 set backupdir=$HOME/.vim/temp
 set viewdir=$HOME/.vim/temp
