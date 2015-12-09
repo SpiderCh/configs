@@ -1,15 +1,15 @@
 set nocompatible
 filetype off
 
-if isdirectory("$HOME/.vim/bundle")
-	set rtp+=$HOME/.vim/bundle/Vundle.vim
-	call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'airblade/vim-gitgutter'
-	Plugin 'Valloric/YouCompleteMe'
-	Plugin 'rdnetto/YCM-Generator'
-	call vundle#end()
-endif
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'rdnetto/YCM-Generator'
+call vundle#end()
 
 filetype plugin on
 filetype indent on
