@@ -7,6 +7,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/OmniCppComplete'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
@@ -16,6 +18,16 @@ filetype indent on
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 set number
 set background=dark
@@ -58,6 +70,8 @@ catch
 endtry
 set hidden   " allow editing multiple unsaved buffers
 filetype on  " automatic file type detection
+set encoding=utf8
+set ffs=unix,dos,mac
 set title
 set autoread " watch for file changes by other programs
 set ruler    " show the line number on bar
@@ -67,9 +81,18 @@ set hid
 set smartcase
 set lazyredraw
 set magic
+set textwidth=80
 set directory=$HOME/.vim/temp
 set backupdir=$HOME/.vim/temp
 set viewdir=$HOME/.vim/temp
+if has("gui_runnig")
+	set guioptions-=l
+	set guioptions-=L
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=T
+	set guitablabel=%M\ %t
+endif
 
 " Добавляем локали для чтения не правильных файлов:
 set encoding=utf-8
@@ -87,8 +110,6 @@ nmap <S-tab> :tabprevious<cr>
 " Следующая вкладка:
 map <C-tab> :tabnext<cr>
 nmap <C-tab> :tabnext<cr>
-" Новая вкладка:
-nmap <C-t> :tabnew<cr>
 " Закрыть вкладку:
 map <S-t> :tabclose<cr>
 set listchars=eol:¬,tab:▸▸,trail:~,extends:>,precedes:<,space:•
@@ -96,3 +117,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
