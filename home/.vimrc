@@ -81,7 +81,8 @@ set hid
 set smartcase
 set lazyredraw
 set magic
-set textwidth=80
+set textwidth=100
+set colorcolumn=100
 set directory=$HOME/.vim/temp
 set backupdir=$HOME/.vim/temp
 set viewdir=$HOME/.vim/temp
@@ -117,7 +118,3 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
