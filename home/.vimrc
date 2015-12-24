@@ -86,14 +86,12 @@ set colorcolumn=100
 set directory=$HOME/.vim/temp
 set backupdir=$HOME/.vim/temp
 set viewdir=$HOME/.vim/temp
-if has("gui_runnig")
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=r
-	set guioptions-=R
-	set guioptions-=T
-	set guitablabel=%M\ %t
-endif
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set guioptions-=T
+set guitablabel=%M\ %t
 
 " Добавляем локали для чтения не правильных файлов:
 set encoding=utf-8
