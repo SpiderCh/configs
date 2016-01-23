@@ -1,40 +1,30 @@
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-scripts/OmniCppComplete'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'rdnetto/YCM-Generator'
-call vundle#end()
+if isdirectory($HOME.'/.vim/bundle/')
+	set rtp+=$HOME/.vim/bundle/Vundle.vim
+	call vundle#begin()
+	Plugin 'VundleVim/Vundle.vim'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'Xuyuanp/nerdtree-git-plugin'
+	Plugin 'airblade/vim-gitgutter'
+	Plugin 'octol/vim-cpp-enhanced-highlight'
+	Plugin 'vim-scripts/OmniCppComplete'
+	"Plugin 'Valloric/YouCompleteMe'
+	"Plugin 'rdnetto/YCM-Generator'
+	call vundle#end()
+endif
 
 filetype plugin on
 filetype indent on
 
 set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:cpp_class_scope_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 set number
 set background=dark
 set nocp
 set cul
-set sh=/bin/bash
-set mp=make
+set sh=/bin/zsh
 
 " Tabs:
 set autoindent
@@ -83,9 +73,17 @@ set lazyredraw
 set magic
 set textwidth=100
 set colorcolumn=100
-set directory=$HOME/.vim/temp
-set backupdir=$HOME/.vim/temp
-set viewdir=$HOME/.vim/temp
+set foldmethod=syntax
+
+if !isdirectory($HOME.'/.vim/temp')
+	silent call mkdir ($HOME.'/.vim/temp', 'p')
+endif
+if isdirectory($HOME.'/.vim/temp')
+	set directory=$HOME/.vim/temp
+	set backupdir=$HOME/.vim/temp
+	set viewdir=$HOME/.vim/temp
+endif
+
 set guioptions-=l
 set guioptions-=L
 set guioptions-=r
