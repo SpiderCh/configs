@@ -1,1 +1,1 @@
-dev-util/cmake qt5
+dev-util/cmake qt5 -qt4

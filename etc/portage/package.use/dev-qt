@@ -3,4 +3,4 @@ dev-qt/qtcore icu
 dev-qt/qtwebkit printsupport
 dev-qt/qtsingleapplication qt4 qt5
 dev-qt/qtlockedfile qt4 qt5
-dev-qt/qt-creator android clang cmake git python valgrind webkit
+dev-qt/qt-creator clang cmake git python valgrind webkit

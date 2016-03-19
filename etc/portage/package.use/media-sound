@@ -1,2 +1,3 @@
 media-sound/clementine lastfm
 media-sound/deadbeef cover cover-imlib2 curl ffmpeg -gtk2 gtk3 lastfm m3u shellexec wma
+media-sound/mpd wavpack sndfile sid recorder opus musepack mpg123 mms lame faad
