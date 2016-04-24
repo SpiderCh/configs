@@ -10,8 +10,8 @@ if isdirectory($HOME.'/.vim/bundle/')
 	Plugin 'airblade/vim-gitgutter'
 	Plugin 'octol/vim-cpp-enhanced-highlight'
 	Plugin 'vim-scripts/OmniCppComplete'
-	"Plugin 'Valloric/YouCompleteMe'
-	"Plugin 'rdnetto/YCM-Generator'
+	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'rdnetto/YCM-Generator'
 	call vundle#end()
 endif
 
@@ -53,6 +53,18 @@ syntax on    " syntax on
 set backspace=indent,eol,start
 set bs=2
 
+if has('gui_running')
+	set guioptions-=T 
+	set guifont=Menlo
+	set guioptions-=l
+	set guioptions-=L
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=m
+	set guitablabel=%M\ %t
+endif
+let g:ycm_key_invoke_completion = '<C-b>'
+
 try
 	set t_Co=256
 	colorscheme wombat256mod
@@ -73,7 +85,10 @@ set lazyredraw
 set magic
 set textwidth=100
 set colorcolumn=100
+set foldenable
 set foldmethod=syntax
+" space open/closes folds
+nnoremap <space> za
 
 if !isdirectory($HOME.'/.vim/temp')
 	silent call mkdir ($HOME.'/.vim/temp', 'p')
@@ -84,12 +99,6 @@ if isdirectory($HOME.'/.vim/temp')
 	set viewdir=$HOME/.vim/temp
 endif
 
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-set guioptions-=T
-set guitablabel=%M\ %t
 
 " Добавляем локали для чтения не правильных файлов:
 set encoding=utf-8
