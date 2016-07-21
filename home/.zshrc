@@ -1,13 +1,16 @@
 # Lines configured by zsh-newuser-install
 #
 if [[ `uname` == "Darwin" ]]; then
-	export MOVAVI_SDK=$HOME/SDK
+	export MOVAVI_SDK=$HOME/usr/SDK
+	export MOVAVI_SDK_PKG=$HOME/usr/SDK_PKG
 	launchctl setenv MOVAVI_SDK $MOVAVI_SDK
+	launchctl setenv MOVAVI_SDK_PKG $MOVAVI_SDK_PKG
 	export GLOG_v=100
 	export GLOG_buflevel=-1
 	export PATH="/usr/local/bin:$PATH"
 	launchctl setenv GLOG_v ${GLOG_v}
 	launchctl setenv GLOG_buflevel ${GLOG_buflevel}
+	export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 fi
 
 ZSH=$HOME/.oh-my-zsh
@@ -56,6 +59,7 @@ elif [[ `uname` == "Linux" ]]; then
 	alias ls='ls --color=auto -F'
 	alias ll='ls -l'
 fi
+# Git usefull stuff
 autoload -Uz compinit
 
 typeset -A key
