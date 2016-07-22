@@ -1,5 +1,3 @@
-# Lines configured by zsh-newuser-install
-#
 if [[ `uname` == "Darwin" ]]; then
 	export MOVAVI_SDK=$HOME/usr/SDK
 	export MOVAVI_SDK_PKG=$HOME/usr/SDK_PKG
@@ -59,7 +57,6 @@ elif [[ `uname` == "Linux" ]]; then
 	alias ls='ls --color=auto -F'
 	alias ll='ls -l'
 fi
-# Git usefull stuff
 autoload -Uz compinit
 
 typeset -A key

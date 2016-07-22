@@ -8,10 +8,6 @@ if isdirectory($HOME.'/.vim/bundle/')
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'Xuyuanp/nerdtree-git-plugin'
 	Plugin 'airblade/vim-gitgutter'
-	Plugin 'octol/vim-cpp-enhanced-highlight'
-	Plugin 'vim-scripts/OmniCppComplete'
-	Plugin 'Valloric/YouCompleteMe'
-	Plugin 'rdnetto/YCM-Generator'
 	call vundle#end()
 endif
 
@@ -87,6 +83,8 @@ set textwidth=100
 set colorcolumn=100
 set foldenable
 set foldmethod=syntax
+set vb t_vb=
+autocmd VimEnter * set vb t_vb=
 " space open/closes folds
 nnoremap <space> za
 
