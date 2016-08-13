@@ -44,7 +44,6 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias ls='ls -GF'
 	alias ll='ls -l'
 	alias ldd='otool -L'
-	alias lockS='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 	alias showF='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
 	alias hideF='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
 	alias lcl='launchctl'
