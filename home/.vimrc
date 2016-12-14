@@ -59,7 +59,6 @@ if has('gui_running')
 	set guioptions-=m
 	set guitablabel=%M\ %t
 endif
-let g:ycm_key_invoke_completion = '<C-b>'
 
 try
 	set t_Co=256
@@ -79,8 +78,7 @@ set hid
 set smartcase
 set lazyredraw
 set magic
-set textwidth=100
-set colorcolumn=100
+set colorcolumn=128
 set foldenable
 set foldmethod=syntax
 set vb t_vb=
@@ -121,3 +119,4 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+set clipboard=unnamed

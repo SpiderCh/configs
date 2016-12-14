@@ -52,6 +52,7 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias xcodelist='xcodebuild -list'
 	alias xcodetarget='xcodebuild -parallelizeTargets -jobs 8 -target'
 	alias silent_build='egrep "^(/.+:[0-9+:[0-9]+:.(error|warning):|fatal|===)"'
+	alias mc='LANG="en_US utf-8" mc'
 elif [[ `uname` == "Linux" ]]; then
 	alias ls='ls --color=auto -F'
 	alias ll='ls -l'
