@@ -8,6 +8,8 @@ if [[ `uname` == "Darwin" ]]; then
 	export PATH="/usr/local/bin:$PATH"
 	launchctl setenv GLOG_v ${GLOG_v}
 	launchctl setenv GLOG_buflevel ${GLOG_buflevel}
+	export LC_CTYPE=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
 	export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 fi
 
@@ -52,7 +54,6 @@ if [[ `uname` == 'Darwin' ]]; then
 	alias xcodelist='xcodebuild -list'
 	alias xcodetarget='xcodebuild -parallelizeTargets -jobs 8 -target'
 	alias silent_build='egrep "^(/.+:[0-9+:[0-9]+:.(error|warning):|fatal|===)"'
-	alias mc='LANG="en_US utf-8" mc'
 elif [[ `uname` == "Linux" ]]; then
 	alias ls='ls --color=auto -F'
 	alias ll='ls -l'
