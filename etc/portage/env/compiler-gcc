@@ -1,0 +1,7 @@
+CC="gcc"
+CXX="g++"
+CFLAGS="-march=native -mtune=native -O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+AR="ar"
+NM="nm"
+RANLIB="ranlib"
