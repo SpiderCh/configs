@@ -1,1 +1,2 @@
 dev-lang/python sqlite tk
+dev-lang/ruby -ncurses -berkdb -rdoc -gdbm

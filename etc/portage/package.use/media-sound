@@ -1,2 +1,3 @@
 media-sound/clementine lastfm
 media-sound/mpd wavpack sndfile sid recorder opus musepack mpg123 mms lame faad
+media-sound/pulseaudio gnome

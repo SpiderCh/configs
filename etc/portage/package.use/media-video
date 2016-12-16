@@ -1,2 +1,3 @@
 media-video/ffmpeg vaapi openssl opus x265 cpu_flags_x86_avx cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3
 media-video/vlc x265 vpx live vaapi theora rtsp
+virtual/libintl abi_x86_32

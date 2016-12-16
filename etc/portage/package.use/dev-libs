@@ -6,3 +6,4 @@ dev-libs/beecrypt threads
 dev-libs/libgit2 ssh
 dev-libs/wayland abi_x86_32
 dev-libs/libdbusmenu-qt qt4
+dev-libs/libpcre abi_x86_32

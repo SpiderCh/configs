@@ -2,3 +2,4 @@ kde-apps/okular chm djvu dpi ebook mobi
 kde-apps/krdc vnc
 kde-apps/print-manager gtk
 kde-apps/kio-extras mtp
+kde-apps/kdebase-runtime-meta -webkit

@@ -1,1 +1,2 @@
-kde-base/systemsettings gtk
+# move kde-base/systemsettings kde-plasma/systemsettings
+kde-plasma/systemsettings gtk

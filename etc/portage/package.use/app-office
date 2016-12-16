@@ -1,2 +1,3 @@
 app-office/texmaker -qt4 qt5
-app-office/akonadi-server -mysql postgres
+# move app-office/akonadi-server kde-apps/akonadi
+kde-apps/akonadi -mysql postgres
