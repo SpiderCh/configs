@@ -1,0 +1,2 @@
+app-editors/vim python
+app-editors/gvim gtk python python_targets_python2_7 python_targets_python3_4

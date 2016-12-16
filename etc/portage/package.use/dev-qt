@@ -1,6 +1,7 @@
-dev-qt/qtwebkit -gstreamer
+dev-qt/qtwebkit -gstreamer printsupport multimedia icu
 dev-qt/qtcore icu
-dev-qt/qtwebkit printsupport
 dev-qt/qtsingleapplication qt4 qt5
 dev-qt/qtlockedfile qt4 qt5
-dev-qt/qt-creator clang cmake git python valgrind webkit
+dev-qt/qt-creator cmake git python valgrind webkit clang clangcodemodel clangstaticanalyzer
+dev-qt/*:4 qt3support
+dev-qt/designer -qt3support

@@ -1,4 +1,4 @@
-media-sound/pulseaudio gtk -tcpd -webrtc-aec
+media-sound/pulseaudio -tcpd -webrtc-aec
 sys-libs/libcap abi_x86_32
 x11-libs/libXtst abi_x86_32
 media-libs/libsndfile abi_x86_32

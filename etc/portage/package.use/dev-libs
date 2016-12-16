@@ -4,3 +4,5 @@ dev-libs/botan threads
 dev-libs/qcustomplot qt5
 dev-libs/beecrypt threads
 dev-libs/libgit2 ssh
+dev-libs/wayland abi_x86_32
+dev-libs/libdbusmenu-qt qt4

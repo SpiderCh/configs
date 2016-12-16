@@ -1,8 +1,0 @@
-x11-misc/primus
-x11-plugins/purple-vk-plugin
-media-sound/deadbeef
-games-util/steam-client-meta::steam-overlay
-app-editors/sublime-text::sublime-text
-media-fonts/steamfonts
-games-util/steam-launcher
-app-emulation/steam-runtime-bin 

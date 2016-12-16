@@ -1,4 +1,4 @@
-net-misc/remmina freerdp
 net-misc/networkmanager bluetooth modemmanager
 net-misc/openvpn passwordsave
 net-misc/networkmanager-openvpn -gtk
+net-misc/iputils -caps -filecaps
