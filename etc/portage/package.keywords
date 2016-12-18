@@ -61,3 +61,4 @@ dev-libs/libev ~amd64
 net-libs/libvncserver ~amd64
 media-gfx/sam2p ~amd64
 app-text/aspell ~amd64
+app-emulation/wine ~amd64
