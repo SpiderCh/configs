@@ -37,7 +37,10 @@ set showmatch " show matching brackets when typing
 set diffopt=filler,iwhite " ignore all whitespace and sync
 " Spelling:
 set wildmenu
-set wcm=
+try
+	set wcm=
+catch
+endtry
 menu SpellLang.RU_EN  :setlocal spell spelllang=ru,en
 menu SpellLang.off :setlocal nospell
 menu SpellLang.RU :setlocal spell spelllang=ru
@@ -64,6 +67,7 @@ try
 	set t_Co=256
 	colorscheme wombat256mod
 catch
+	colorscheme evening
 endtry
 set hidden   " allow editing multiple unsaved buffers
 filetype on  " automatic file type detection
