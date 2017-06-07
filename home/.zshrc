@@ -11,6 +11,7 @@ if [[ `uname` == "Darwin" ]]; then
 	export LC_CTYPE=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
 	export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+	alias unload_soundgrabber='sudo kextunload /Library/Extensions/MovaviSoundGrabber.kext'
 fi
 
 ZSH=$HOME/.oh-my-zsh
