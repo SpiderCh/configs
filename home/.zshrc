@@ -3,11 +3,13 @@ if [[ `uname` == "Darwin" ]]; then
 	export MOVAVI_SDK_PKG=$HOME/usr/SDK_PKG
 	launchctl setenv MOVAVI_SDK $MOVAVI_SDK
 	launchctl setenv MOVAVI_SDK_PKG $MOVAVI_SDK_PKG
-	export GLOG_v=100
-	export GLOG_buflevel=-1
+	export GLOG_stderrthreshold=2
+#	export GLOG_v=100
+#	export GLOG_buflevel=-1
 	export PATH="/usr/local/bin:$PATH"
-	launchctl setenv GLOG_v ${GLOG_v}
-	launchctl setenv GLOG_buflevel ${GLOG_buflevel}
+#	launchctl setenv GLOG_v ${GLOG_v}
+#	launchctl setenv GLOG_buflevel ${GLOG_buflevel}
+	launchctl setenv GLOG_stderrthreshold ${GLOG_stderrthreshold}
 	export LC_CTYPE=en_US.UTF-8
 	export LC_ALL=en_US.UTF-8
 	export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -18,7 +20,7 @@ ZSH=$HOME/.oh-my-zsh
 
 if [ -d "$ZSH" ]; then
 	ZSH_THEME="gentoo"
-	plugins=(git git-extras git-prompt zsh-syntax-highlighting)
+	plugins=(git git-extras git-prompt zsh-syntax-highlighting osx xcode vi-mode)
 	source $ZSH/oh-my-zsh.sh
 fi
 

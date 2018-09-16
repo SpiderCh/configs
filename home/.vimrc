@@ -1,15 +1,7 @@
+execute pathogen#infect()
+
 set nocompatible
 filetype off
-
-if isdirectory($HOME.'/.vim/bundle/')
-	set rtp+=$HOME/.vim/bundle/Vundle.vim
-	call vundle#begin()
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'scrooloose/nerdtree'
-	Plugin 'Xuyuanp/nerdtree-git-plugin'
-	Plugin 'airblade/vim-gitgutter'
-	call vundle#end()
-endif
 
 filetype plugin on
 filetype indent on
@@ -99,6 +91,15 @@ if isdirectory($HOME.'/.vim/temp')
 	set viewdir=$HOME/.vim/temp
 endif
 
+if has("autocmd")
+  augroup cssalias
+    autocmd BufRead,BufNewFile *.qss set filetype=css
+  augroup END
+  augroup qrcalias
+    autocmd BufRead,BufNewFile *.qrc set filetype=xml
+  augroup END
+  autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+endif
 
 " Добавляем локали для чтения не правильных файлов:
 set encoding=utf-8
