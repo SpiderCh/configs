@@ -40,6 +40,7 @@ menu SpellLang.EN :setlocal spell spelllang=en
 map  :emenu SpellLang.
 " Other
 syntax on    " syntax on
+set list
 
 set backspace=indent,eol,start
 set bs=2
@@ -63,7 +64,7 @@ catch
 endtry
 set hidden   " allow editing multiple unsaved buffers
 filetype on  " automatic file type detection
-set encoding=utf8
+set encoding=utf-8
 set ffs=unix,dos,mac
 set title
 set autoread " watch for file changes by other programs
@@ -98,7 +99,7 @@ if has("autocmd")
   augroup qrcalias
     autocmd BufRead,BufNewFile *.qrc set filetype=xml
   augroup END
-  autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+  autocmd FileType python set tabstop=4 | set shiftwidth=4 | set softtabstop=4 | set expandtab | set autoindent | set fileformat=unix
 endif
 
 " Добавляем локали для чтения не правильных файлов:
