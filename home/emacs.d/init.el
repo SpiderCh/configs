@@ -36,7 +36,7 @@
 
 ;; Showing line numbers
 (when (version<= "26.0.50" emacs-version )
-    (global-display-line-numbers-mode))
+  (global-display-line-numbers-mode))
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -49,11 +49,27 @@
     (setq default-buffer-file-coding-system 'utf-8)
   )
 
-;(defun configure-python-mode
-;    (setq python-indent-offset 2)
-;  )
+(add-hook 'python-mode-hook
+  (lambda ()
+    (setq indent-tabs-mode nil)
+    (setq tab-width 2)
+    (setq python-indent 2)))
 
-;(add-hook 'python-mode-hook 'configure-python-mode)
+(add-hook 'lisp-mode-hook
+  (lambda ()
+    (setq indent-tabs-mode nil)
+    (setq tab-width 2)
+    (setq lisp-indent 2))
+  )
+
+(add-hook 'emacs-lisp-mode-hook
+  (lambda ()
+    (setq indent-tabs-mode nil)
+    (setq tab-width 2)
+    (setq lisp-indent 2))
+  )
+
+(setq tab-width 4)
 
 (setq ns-pop-up-frames nil)
 
