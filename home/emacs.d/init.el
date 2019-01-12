@@ -69,6 +69,13 @@
     (setq lisp-indent 2))
   )
 
+(add-hook 'scheme-lisp-mode-hook
+  (lambda ()
+    (setq indent-tabs-mode nil)
+    (setq tab-width 2)
+    (setq lisp-indent 2))
+  )
+
 (setq tab-width 4)
 
 (setq ns-pop-up-frames nil)
