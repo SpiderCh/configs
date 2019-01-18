@@ -1,0 +1,18 @@
+(defun load-cmake ()
+    (defun get-cmake-path ()
+        (cond ((equal system-type 'darwin) "/Applications/CMake.App/Contents/share/")
+              ((equal system-type 'windows-nt) "C:\\Program Files\\CMake\\share\\")
+              (t "")
+        )
+    )
+
+  (defvar path-to-cmake-app (get-cmake-path))
+  (if (file-directory-p path-to-cmake-app)
+      (cond ((defvar cmake-dir (directory-files path-to-cmake-app nil "cmake-*"))
+             (setq load-path (cons (expand-file-name (concat path-to-cmake-app (car cmake-dir) "/editors/emacs/")) load-path))
+             (require 'cmake-mode)
+      ))
+  )
+)
+
+(load-cmake)
