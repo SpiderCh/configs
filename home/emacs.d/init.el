@@ -7,18 +7,7 @@
 (package-initialize)
 
 (setq is-mac (equal system-type 'darwin))
-
-(if is-mac
-    (cond (
-          (defvar path-to-cmake-app "/Applications/CMake.App/Contents/share/")
-          (if (file-directory-p path-to-cmake-app) (cond (
-                (defvar cmake-dir (directory-files path-to-cmake-app nil "cmake-*"))
-                (setq load-path (cons (expand-file-name (concat path-to-cmake-app (car cmake-dir) "/editors/emacs/")) load-path))
-                (require 'cmake-mode)
-          ))
-         ))
-    )
-  )
+(setq is-win (equal system-type 'windows-nt))
 
 (if (fboundp 'menu-bar-mode) (menu-bar-mode 1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode 1))
@@ -33,10 +22,14 @@
                  (concat user-emacs-directory "backups")))))
 
 (load (concat user-emacs-directory "whitespace_config.el"))
+(load (concat user-emacs-directory "cmake_config.el"))
 
 ;; Showing line numbers
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode))
+
+(electric-indent-mode -1)
+(add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -80,7 +73,10 @@
 
 (setq ns-pop-up-frames nil)
 
-(defvar aspell-binary "/usr/local/bin/aspell")
-(if (file-exists-p aspell-binary) (setq ispell-program-name aspell-binary))
+(if is-mac
+    (lambda ()
+      (defvar aspell-binary "/usr/local/bin/aspell")
+      (if (file-exists-p aspell-binary) (setq ispell-program-name aspell-binary)))
+  )
 
 (setq-default tab-always-indent 'complete)
